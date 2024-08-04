@@ -1,5 +1,134 @@
-<div>
-    <h1>Welcome to the Admin Dashboard</h1>
-    <button (click)="logout()">Logout</button>
+<div class="admin-dashboard bg-gray-100 min-h-screen">
+    <header class="bg-[#5A639C] text-white p-4 flex justify-between items-center shadow-md">
+      <h1 class="text-2xl font-bold">Admin Dashboard</h1>
+      <button (click)="logout()" class="bg-[#E2BBE9] hover:bg-[#D6A8D6] text-[#5A639C] px-4 py-2 rounded-full transition duration-200">Logout</button>
+    </header>
+    
+    <div class="flex">
+      <nav class="bg-[#7776B3] text-white w-64 min-h-screen p-4 shadow-md">
+        <ul class="space-y-2">
+          <li><a href="#accounts" class="block py-2 px-4 hover:bg-[#9B86BD] rounded-full transition duration-200">Accounts</a></li>
+          <li><a href="#events" class="block py-2 px-4 hover:bg-[#9B86BD] rounded-full transition duration-200">Events</a></li>
+          <li><a href="#bookings" class="block py-2 px-4 hover:bg-[#9B86BD] rounded-full transition duration-200">Bookings</a></li>
+          <li><a href="#contacts" class="block py-2 px-4 hover:bg-[#9B86BD] rounded-full transition duration-200">Contacts</a></li>
+        </ul>
+      </nav>
+      
+      <main class="flex-1 p-8">
+        <section id="accounts" class="mb-8">
+          <h2 class="text-xl font-semibold mb-4 text-[#5A639C]">Manage Accounts</h2>
+          <button class="bg-[#E2BBE9] hover:bg-[#D6A8D6] text-[#5A639C] px-4 py-2 rounded-full transition duration-200 mb-4">Add New Account</button>
+          <div class="overflow-x-auto">
+            <table class="w-full bg-white shadow-md rounded">
+              <thead class="bg-[#5A639C] text-white">
+                <tr>
+                  <th class="py-3 px-4 text-left">ID</th>
+                  <th class="py-3 px-4 text-left">Username</th>
+                  <th class="py-3 px-4 text-left">Email</th>
+                  <th class="py-3 px-4 text-left">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b ">
+                  <td class="py-3 px-4">1</td>
+                  <td class="py-3 px-4">user1</td>
+                  <td class="py-3 px-4">user1@example.com</td>
+                  <td class="py-3 px-4">
+                    <button class="bg-[#7776B3] hover:bg-[#6E6AB3] text-white px-3 py-1 rounded-full transition duration-200 mr-2">Edit</button>
+                    <button class="bg-[#E2BBE9] hover:bg-[#D6A8D6] text-[#5A639C] px-3 py-1 rounded-full transition duration-200">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        
+        <section id="events" class="mb-8">
+          <h2 class="text-xl font-semibold mb-4 text-[#5A639C]">Manage Events</h2>
+          <button class="bg-[#E2BBE9] hover:bg-[#D6A8D6] text-[#5A639C] px-4 py-2 rounded-full transition duration-200 mb-4">Add New Event</button>
+          <div class="overflow-x-auto">
+            <table class="w-full bg-white shadow-md rounded">
+              <thead class="bg-[#5A639C] text-white">
+                <tr>
+                  <th class="py-3 px-4 text-left">ID</th>
+                  <th class="py-3 px-4 text-left">Name</th>
+                  <th class="py-3 px-4 text-left">Date</th>
+                  <th class="py-3 px-4 text-left">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b ">
+                  <td class="py-3 px-4">1</td>
+                  <td class="py-3 px-4">Summer Concert</td>
+                  <td class="py-3 px-4">2024-07-15</td>
+                  <td class="py-3 px-4">
+                    <button class="bg-[#7776B3] hover:bg-[#6E6AB3] text-white px-3 py-1 rounded-full transition duration-200 mr-2">Edit</button>
+                    <button class="bg-[#E2BBE9] hover:bg-[#D6A8D6] text-[#5A639C] px-3 py-1 rounded-full transition duration-200">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        
+        <section id="bookings" class="mb-8">
+          <h2 class="text-xl font-semibold mb-4 text-[#5A639C]">Manage Bookings</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full bg-white shadow-md rounded">
+              <thead class="bg-[#5A639C] text-white">
+                <tr>
+                  <th class="py-3 px-4 text-left">ID</th>
+                  <th class="py-3 px-4 text-left">Event</th>
+                  <th class="py-3 px-4 text-left">User</th>
+                  <th class="py-3 px-4 text-left">Status</th>
+                  <th class="py-3 px-4 text-left">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b ">
+                  <td class="py-3 px-4">1</td>
+                  <td class="py-3 px-4">Summer Concert</td>
+                  <td class="py-3 px-4">user1</td>
+                  <td class="py-3 px-4">Pending</td>
+                  <td class="py-3 px-4">
+                    <button class="bg-[#7776B3] hover:bg-[#6E6AB3] text-white px-3 py-1 rounded-full transition duration-200 mr-2">Approve</button>
+                    <button class="bg-[#E2BBE9] hover:bg-[#D6A8D6] text-[#5A639C] px-3 py-1 rounded-full transition duration-200">Reject</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        
+        <section id="contacts">
+          <h2 class="text-xl font-semibold mb-4 text-[#5A639C]">Manage Contacts</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full bg-white shadow-md rounded">
+              <thead class="bg-[#5A639C] text-white">
+                <tr>
+                  <th class="py-3 px-4 text-left">ID</th>
+                  <th class="py-3 px-4 text-left">Name</th>
+                  <th class="py-3 px-4 text-left">Email</th>
+                  <th class="py-3 px-4 text-left">Message</th>
+                  <th class="py-3 px-4 text-left">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b">
+                  <td class="py-3 px-4">1</td>
+                  <td class="py-3 px-4">John Doe</td>
+                  <td class="py-3 px-4">john@example.com</td>
+                  <td class="py-3 px-4">Hello, I have a question about...</td>
+                  <td class="py-3 px-4">
+                    <button class="bg-[#7776B3] hover:bg-[#6E6AB3] text-white px-3 py-1 rounded-full transition duration-200 mr-2">View</button>
+                    <button class="bg-[#E2BBE9] hover:bg-[#D6A8D6] text-[#5A639C] px-3 py-1 rounded-full transition duration-200">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
   </div>
   
