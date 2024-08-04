@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,7 @@ import { EventListComponent } from './client/events/event-list/event-list.compon
 import { EventDetailsComponent } from './client/events/event-details/event-details.component';
 import { EventBookingComponent } from './client/events/event-booking/event-booking.component';
 import { ContactComponent } from './client/contact/contact.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,9 @@ import { ContactComponent } from './client/contact/contact.component';
    
 
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
