@@ -5,3 +5,20 @@
     <button (click)="logout()">Logout</button>
   </div>
   
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-2xl font-bold mb-4">Upcoming Events</h1>
+    <div *ngIf="events.length === 0" class="text-center">
+      <p>No events available</p>
+    </div>
+    <div *ngIf="events.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div *ngFor="let event of events" class="bg-white shadow-md rounded-lg p-4">
+        <h2 class="text-xl font-semibold">{{ event.name }}</h2>
+        <p class="text-gray-600">{{ event.description }}</p>
+        <p class="text-gray-600"><strong>Date:</strong> {{ event.date | date }}</p>
+        <p class="text-gray-600"><strong>Location:</strong> {{ event.location }}</p>
+        <p class="text-gray-600"><strong>Category:</strong> {{ event.category }}</p>
+        <p class="text-gray-600"><strong>Available Tickets:</strong> {{ event.availableTickets }}</p>
+      </div>
+    </div>
+  </div>
+  
