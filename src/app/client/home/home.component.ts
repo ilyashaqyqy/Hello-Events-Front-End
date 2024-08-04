@@ -12,6 +12,7 @@ import { Event } from '../../models/event';
 
 export class HomeComponent implements OnInit {
   events: Event[] = [];
+
   
 
   constructor(private authService: AuthService, private router: Router , private eventService: EventService , ) { }
